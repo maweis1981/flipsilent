@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.maweilabs" android:versionCode="3" android:versionName="20100207">
+
+	<uses-sdk android:minSdkVersion="3" />
+
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<!--<uses-permission android:name="android.permission.INTERNET" />-->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
+
+
+
+	<application android:label="@string/activity_toggle_silent"
+		android:icon="@drawable/icon">
+
+		<receiver android:name=".ToggleSilentBootReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+
+		<service android:name=".ToggleSilentService" />
+
+		<activity android:name=".ToggleSilentActivity" android:label="@string/activity_toggle_silent">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<meta-data android:value="a149f9c39f6fcfa" android:name="ADMOB_PUBLISHER_ID" />
+
+	</application>
+
+
+
+
+</manifest> 
